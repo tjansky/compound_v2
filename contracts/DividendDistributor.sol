@@ -198,4 +198,9 @@ contract DividendDistributor is IDividendDistributor {
 
         authorizedCallers[account] = false;
     }
+
+    function transferOwnership(address newOwner) external onlyOwner {
+        require(newOwner != address(0), "Zero address");
+        owner = newOwner;
+    }
 }
